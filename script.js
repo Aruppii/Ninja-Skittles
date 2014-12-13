@@ -2,7 +2,7 @@
 //var intervalLength = 20;
 var intervalLength = 5;
 var intervalsPerCreate = 50;
-var moveSize = 20;
+var moveSize = 30;
 var width = $('#mainBox').outerWidth();
 var height = $('#mainBox').outerHeight(); 
 var goodImages = ["http://i.imgur.com/ltE24Vk.png", "http://i.imgur.com/IM7iQb0.png", "http://i.imgur.com/jscoEV3.png"];
