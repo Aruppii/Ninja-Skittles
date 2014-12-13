@@ -9,6 +9,7 @@ var goodImages = ["http://i.imgur.com/ltE24Vk.png", "http://i.imgur.com/IM7iQb0.
 var badImages = ["http://i.imgur.com/aHmsJeu.png", "http://i.imgur.com/axxrI3N.png"];
 var song;
 var endSong;
+var level = 0;
 function Game(){
   playSong();
   var fruits = [];
@@ -46,7 +47,11 @@ function Game(){
   function handleHit() {
     if ($(this).hasClass('fruit')) {
       removeFruit($(this));
-      score += 10; 
+      score += 10;
+      if ( score == ((level + 1) * 100 )) {
+        level += 1;
+        updateLevel(level);
+      }
     } else if ($(this).hasClass('bombs')) {
       removeBomb($(this));
       lives -= 1;
@@ -56,10 +61,16 @@ function Game(){
       loss();
     }
   }
+  function updateLevel(str) {
+    $('#level').text("Level " + str + " passed!");
+    setTimeout(function(){
+      $('#level').text('');
+    }, 2000);
+  }
   function loss(){
     stopSong();
     playEndSong();
-    alert("Game over");
+    alert("Game over! Your score is " + score);
     game.stop();
   }
   function updateScore(){

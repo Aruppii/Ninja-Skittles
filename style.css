@@ -1,6 +1,23 @@
 html, body {
   height: 100%;
 }
+#title {
+  text-align: center;
+  color: white;
+  font-family: 'Tangerine', serif;
+  font-size: 48px;
+  text-shadow: 4px 4px 4px #aaa;
+}
+#level {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  opacity: 0.5;
+  font-family: 'Tangerine', serif;
+  font-size: 100px;
+  text-shadow: 4px 4px 4px #aaa;
+  top: 30%;
+}
 #mainBox {
   height: 80%;
   width: 90%;
